@@ -1,0 +1,78 @@
+WebSPHINX version 0.5
+-------------------------
+
+WebSPHINX is a Java class library and interactive development
+environment for Web crawlers. A Web crawler (also called a robot or
+spider) is a program that browses and processes Web pages
+automatically.
+
+For more information about WebSPHINX, visit
+
+        http://www.cs.cmu.edu/~rcm/websphinx/
+
+This source code is distributed under the terms of an Apache-style
+license.
+
+WebSPHINX depends on two other packages available only in binary form:
+
+        * gd/graph graph-drawing package by Daniel Tunkelang
+        * symantec.itools.awt package by Symantec Visual Cafe
+
+Class files for these packages (but not Java source files) are
+distributed in this archive for the purpose of recompiling WebSPHINX.
+
+
+Recompiling WebSPHINX
+-------------------------
+
+(Note: the archive contains precompiled class files, so you don't need
+to recompile WebSPHINX unless you change its source.)
+
+
+1. Get the netscape.* packages from an installation of Netscape
+4.0 or later.  (It's possible to compile WebSPHINX without the
+netscape packages, so you can skip this step.  You'll get compile
+errors from two source files, but otherwise WebSPHINX will run fine
+under the JDK.)
+
+The netscape packages are included in java40.jar, which can usually be
+found in one of the following locations:
+
+     Unix:    <netscape-directory>/java/java40.jar
+                     or
+              <netscape-directory>/java/classes/java40.jar
+
+     Windows: <netscape-directory>\Program\Java\Classes\java40.jar
+
+Extract the netscape.* packages into your websphinx directory:
+
+     jar xvf <netscape-path>/java40.jar netscape
+
+Be careful not to extract *all* the classes in java40.jar, since java40.jar
+also includes standard java packages (e.g. java.lang.*) that you don't want.
+
+
+2. Compile WebSPHINX:
+
+   2(a) If you have GNU make, just run 
+
+                gmake
+
+        to recompile all source files using the makefile. The makefile
+        depends on gmake features, so ordinary make won't work.  The
+        result of the make will be a new jar file, websphinx.jar.
+
+        Then run Websphinx using
+
+                java -jar websphinx.jar
+
+   2(b) If you don't have GNU make, compile all Java files by hand, e.g.:
+
+                javac websphinx/*.java \
+                      websphinx/workbench/*.java \
+                      websphinx/searchengine/*.java
+
+        Then set your classpath to point to src/ and lib/, and run
+
+                java websphinx.workbench.Workbench
+

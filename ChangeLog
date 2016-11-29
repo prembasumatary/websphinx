@@ -1,0 +1,46 @@
+v 0.5 (July 8, 2002)
+  * the released jar file is no longer signed, so it won't run as an applet inside
+    Netscape or IE.  Too much of a pain to sign the jar file.
+  * Websphinx is now available under an Apache-style license instead of LGPL
+  * pages are now downloaded as byte arrays instead of UTF-8 strings, so
+    that binary content like images and PDF files can be mirrored safely (Chad Phillips)
+  * content-type "text/html charset=XXX" is handled properly (Noppadon Kamolvilassatian)
+  * race condition between marking links as queued and removing them from queue 
+    (Ludmilla Portugeis)
+  * now uses redirected URL as base URL
+
+v 0.4a (Jan 20 2000)
+  * Recompiling from sources is easier, because the source distribution
+    now includes all the class files found in the binary distribution.
+  * Fixed some compile errors in the source.
+
+v 0.4 (Apr 17 1998)
+  * Outline visualization
+  * Visualization options panel
+  * Concatenator now converts GIFs and JPGs to inline images
+  * Concatenator puts a page break between each Web page (only affects how page is
+    printed)
+
+v 0.3 (Mar 27 1998)
+  * Simple mode added.
+  * Link type restriction added (hyperlinks v. images+hyperlinks v. all-links).
+  * Concatenator now converts text to HTML (wrapping the text with &lt;PRE&gt;
+    tags and quoting special characters).
+  * Known bugs (soon to be fixed):
+     -Popup dialogs don't appear under IE 4.0.
+
+v 0.2 (Mar 11 1998)
+  * Internet Explorer 4.0 support added.
+  * The Save and Concatenate operations change links to point to saved local
+    pages whenever possible.
+  * The Statistics panel is now user-drawn.
+
+v 0.1 (Mar 6 1998)
+  * Support for Netscape 4.0, Netscape 3.0, JDK 1.1, and JDK 1.0.2.
+  * Known bugs (soon to be fixed):
+     - The Save and Concatenate operations change all links into absolute references
+       to the original versions out on the net. These operations ought to point
+       to saved local pages whenever possible.
+     - Server redirections (such as the <A HREF="http://www.cs.cmu.edu/">SCS
+       homepage</A>) are not taken into account by the HTML parser, so relative
+       links from redirected pages are misinterpreted.

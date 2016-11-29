@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+                               
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+                               
+  <meta name="GENERATOR"
+ content="Mozilla/4.7 [en] (X11; I; Linux 2.0.36 i586) [Netscape]">
+          <!-- Created with AOLpress/2.0 -->
+  <title>WebSPHINX: A Personal, Customizable Web Crawler</title>
+    
+</head>
+  <body bgcolor="#ffffff">
+               
+<center>          
+<h1>     <img src="images/sphinx_logo.gif" height="235" width="309">
+       <br>
+            WebSPHINX:<br>
+            A Personal, Customizable Web Crawler   </h1>
+        </center>
+                
+<h3>   Contents </h3>
+               
+<ul>
+          <li>     <a href="#about">About WebSPHINX</a>   </li>
+         <li>     <a href="#download"><b>Download</b></a></li>
+     <li><a href="#examples">Examples</a><b><br>
+       </b></li>
+         <li><a href="#faq">FAQ</a>    </li>
+         <li>      <a href="#src">Source Code</a> (latest release v0.5, July
+8, 2002; see <a href="ChangeLog">change history</a>)   </li>
+         <li>     <a href="#doc">Documentation</a>   </li>
+         <li>     <a href="#papers">Publications</a>   </li>
+         <li>     <a href="#other">Related Links</a>   </li>
+         <li>     <a href="#funding">Acknowledgements</a> </li>
+             
+</ul>
+                
+<h2>   <a name="about">About WebSPHINX</a> </h2>
+               
+<p> WebSPHINX ( <u>Web</u>site-<u>S</u>pecific <u>P</u>rocessors for <u>H</u>TML
+<u>IN</u>formation e<u>X</u>traction) is a Java class library and interactive
+  development environment for web crawlers. A web crawler (also called a
+robot   or spider) is a program that browses and processes Web pages automatically.
+  </p>
+             
+<p> WebSPHINX consists of two parts: the Crawler Workbench and the WebSPHINX
+    class library. </p>
+             
+<h4>   Crawler Workbench </h4>
+               
+<p> The Crawler Workbench is a graphical user interface that lets you configure 
+ and control a customizable web crawler. Using the Crawler Workbench, you 
+can: </p>
+             
+<ul>
+          <li>     Visualize a collection    of web pages     as a graph
+  </li>
+         <li>     Save pages to your local  disk   for offline     browsing
+  </li>
+         <li>     Concatenate pages  together   for viewing     or printing
+them as a single document   </li>
+         <li>     Extract all text matching    a certain pattern     from
+a collection of pages.   </li>
+         <li>     Develop a custom crawler    in Java or     Javascript that
+processes pages however you want. </li>
+             
+</ul>
+               
+<h4>   WebSPHINX class library </h4>
+               
+<p> The WebSPHINX class library provides support for writing web crawlers 
+   in Java. The class library offers a number of features: </p>
+             
+<ul>
+          <li>     Multithreaded Web page   retrieval     in     a simple
+application framework   </li>
+         <li>     An object model that explicitly represents        pages
+and     links   </li>
+         <li>     Support for reusable page content        classifiers  
+  </li>
+         <li>     Tolerant HTML parsing        </li>
+         <li>     Support for the  robot  exclusion     standard     </li>
+         <li>     Pattern matching,   including       regular expressions,
+  Unix shell       wildcards, and          HTML tag expressions. Regular
+  expressions     are provided by the  Apache jakarta-regexp regular   expression
+library.   </li>
+         <li>     Common HTML  transformations    ,     such as concatenating
+pages    ,         saving pages to disk, and      renaming links   </li>
+             
+</ul>
+               
+<h2>   <a name="download">Download</a></h2>
+     
+<h4> </h4>
+               
+<p> First, you need Java 1.2 or later installed on your computer. If you're 
+   not sure, try running <tt>java -version</tt>. If you need to install Java 
+   on Windows, Linux, or Solaris, go directly to <a
+ href="http://java.sun.com/jdk/">   Sun</a>; for other platforms, consult
+  the list of <a href="http://java.sun.com/cgi-bin/java-ports.cgi">   Java
+ ports</a>.  </p>
+             
+<p> If your computer has AFS access, run <tt>java -jar /afs/cs.cmu.edu/user/rcm/www/websphinx/websphinx.jar</tt> 
+    </p>
+             
+<p> If you don't have AFS, you'll need to download this JAR file:  </p>
+             
+<blockquote>   <a href="websphinx.jar">   websphinx.jar</a><br>
+       </blockquote>
+     and then run <tt>java -jar websphinx.jar</tt>                 
+<p> </p>
+           
+<p>       The Crawler Workbench will appear in a new window.<br>
+   </p>
+     
+<h2><a name="examples"></a>Examples<br>
+   </h2>
+     
+<p>Here are some things to try in the     Workbench.</p>
+     
+<dl>
+  <dt>     <b>Visualize part of the Web as a     graph</b>   </dt>
+  <dd>This crawler retrieves the     <a
+ href="http://www.cs.cmu.edu/%7Ercm/websphinx/index.html">WebSPHINX</a> pages
+       you've been reading and renders them as a graph of pages and links.</dd>
+  <dd>     
+    <div align="left">          </div>
+     
+    <table cellpadding="2" cellspacing="2" border="0">
+         <tbody>
+           <tr>
+             <td valign="top" width="20%">                              
+  
+          <dl>
+            <dd><br>
+    </dd>
+            <dd>                                                
+              <table cellpadding="2" cellspacing="2" border="1">
+        <tbody>
+          <tr>
+            <td valign="top">Crawl<br>
+            </td>
+            <td valign="top">the subtree<br>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">URL<br>
+            </td>
+            <td valign="top">http://www.cs.cmu.edu/~rcm/websphinx<br>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">Action<br>
+            </td>
+            <td valign="top">none<br>
+            </td>
+          </tr>
+                                                           
+                </tbody>                                                
+              </table>
+                                    <br>
+                     
+              <div align="left">   </div>
+             </dd>
+          </dl>
+             <br>
+             </td>
+             <td valign="top">           
+          <div align="left">                         </div>
+           <img src="file:///home/rcm/websphinx/images/visualize.gif"
+ alt="Visualize part of the Web as a graph" width="515" height="275">
+                  <br>
+             </td>
+           </tr>
+                       
+      </tbody>               
+    </table>
+     </dd>
+  <dd>               
+    <div align="center"><br>
+       </div>
+     </dd>
+  <dd>               
+    <div align="center">&nbsp;     <br>
+       </div>
+      </dd>
+  <dt>     <b>Save pages to disk</b>   </dt>
+  <dd>     This crawler retrieves the     <a
+ href="http://reports-archive.adm.cs.cmu.edu/index.html">SCS Technical Reports 
+     index</a>, which consists of about 30 pages, and saves it to a directory
+       on your local disk.               
+    <table cellpadding="2" cellspacing="2" border="0">
+         <tbody>
+           <tr>
+             <td valign="top" align="left" width="20%">                 
+               
+          <dl>
+            <dd><br>
+    </dd>
+            <dd>                                                
+              <table cellpadding="2" cellspacing="2" border="1">
+        <tbody>
+          <tr>
+            <td valign="top">Crawl<br>
+            </td>
+            <td valign="top">the subtree<br>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">URL<br>
+            </td>
+            <td valign="top">http://reports-archive.adm.cs.cmu.edu/cs.html<br>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">Action<br>
+            </td>
+            <td valign="top">save<br>
+            </td>
+          </tr>
+                     <tr>
+            <td valign="top">Directory<br>
+            </td>
+            <td valign="top">./scs-techreports<br>
+            </td>
+          </tr>
+                                                            
+                </tbody>                                                
+              </table>
+                                    <br>
+         </dd>
+          </dl>
+             <br>
+             </td>
+             <td valign="top">           
+          <div align="left">                                 
+          <dl>
+            <dd>                                   <img
+ src="file:///home/rcm/websphinx/images/save.gif"
+ alt="Save pages to disk" width="509" height="272">
+             </dd>
+          </dl>
+           </div>
+             <br>
+             </td>
+           </tr>
+                       
+      </tbody>               
+    </table>
+     </dd>
+  <dd>               
+    <div align="center"><br>
+      </div>
+    </dd>
+  <dd><br>
+     </dd>
+</dl>
+     
+<dl>
+  <dt>     <b>Concatenate pages for     printing</b>   </dt>
+  <dd>     This crawler concatenates all the pages in Bob Harper's     <a
+ href="http://www.cs.cmu.edu/%7Erwh/introsml/">Introduction to SML</a> into
+       a single massive page, suitable for printing.</dd>
+  <dd>     
+    <div align="left">          </div>
+     
+    <table cellpadding="2" cellspacing="2" border="0">
+         <tbody>
+           <tr>
+             <td valign="top" width="20%" align="left">                 
+               
+          <dl>
+            <dd><br>
+    </dd>
+            <dd>                                                
+              <table cellpadding="2" cellspacing="2" border="1">
+        <tbody>
+          <tr>
+            <td valign="top">Crawl<br>
+            </td>
+            <td valign="top">the subtree<br>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">URL<br>
+            </td>
+            <td valign="top">http://www.cs.cmu.edu/~rwh/introsml/<br>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">Action<br>
+            </td>
+            <td valign="top">concatenate<br>
+            </td>
+          </tr>
+                     <tr>
+              <td valign="top">File<br>
+              </td>
+              <td valign="top">./intro-sml.html<br>
+              </td>
+            </tr>
+                                                            
+                </tbody>                                                
+              </table>
+                          </dd>
+          </dl>
+             <br>
+             </td>
+             <td valign="top" align="left">                             
+   
+          <dl>
+            <dd>                  <img
+ src="file:///home/rcm/websphinx/images/concatenate.gif"
+ alt="Concatenate pages for printing" width="508" height="270">
+        <br>
+      </dd>
+          </dl>
+             <br>
+             </td>
+           </tr>
+                       
+      </tbody>               
+    </table>
+     
+    <div align="left">    </div>
+   </dd>
+  <dd>               
+    <div align="center"><br>
+      </div>
+      </dd>
+  <dd>               
+    <div align="center"><br>
+       </div>
+     </dd>
+</dl>
+     
+<dl>
+  <dt>     <b>Extract images from a set of pages</b>   </dt>
+  <dd> This crawler surfs over a few pages of <a
+ href="http://sunsite.unc.edu/Dave/logos.htm">Dr. Fun</a> logos and generates 
+  a new page containing all the logos found.</dd>
+  <dd>     
+    <div align="left">               </div>
+     
+    <table cellpadding="2" cellspacing="2" border="0">
+          <tbody>
+            <tr>
+              <td valign="top" align="left" width="20%">                
+                           
+          <dl>
+            <dd><br>
+    </dd>
+            <dd>                                                
+              <table cellpadding="2" cellspacing="2" border="1">
+        <tbody>
+          <tr>
+            <td valign="top">Crawl<br>
+            </td>
+            <td valign="top">the subtree<br>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">URL<br>
+            </td>
+            <td valign="top">http://sunsite.unc.edu/Dave/logos.htm<br>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top">Action<br>
+            </td>
+            <td valign="top">extract<br>
+            </td>
+          </tr>
+                     <tr>
+            <td valign="top">Pattern<br>
+            </td>
+            <td valign="top">&lt;a&gt;(?{logo}&lt;img&gt;)&lt;p&gt;(?{caption})&lt;/a&gt;<br>
+            </td>
+          </tr>
+                                          <tr>
+                       <td valign="top">File</td>
+                       <td valign="top">./dr-fun.html<br>
+                       </td>
+                     </tr>
+                                                            
+                </tbody>                                                
+              </table>
+                                    <br>
+         </dd>
+          </dl>
+              <br>
+              </td>
+              <td valign="top" align="left">                            
+               
+          <dl>
+            <dd>                                                         
+                      
+              <dl>
+                <dd>                                           <img
+ src="file:///home/rcm/websphinx/images/extract.gif"
+ alt="Extract images from a set of pages" width="509" height="269">
+        <br>
+             </dd>
+              </dl>
+             </dd>
+          </dl>
+              <br>
+              </td>
+            </tr>
+                               
+      </tbody>                    
+    </table>
+     
+    <div align="left">   </div>
+   </dd>
+</dl>
+                   
+<h2><a name="faq"></a>Frequently Asked Questions</h2>
+                   
+<dl>
+  <dt><b>Who is WebSPHINX intended for?</b></dt>
+  <dd>WebSPHINX is designed for advanced web users and Java programmers who
+  want to crawl over a small   part of the web (such as a single web site) 
+ automatically.</dd>
+  <dt><b>Can I get the source code?</b></dt>
+  <dd>Yes, WebSPHINX is open source, covered by an Apache-style license (see
+      <a href="#src">Source Code</a>).</dd>
+  <dt><b>Where can I find documentation or examples for programming   WebSPHINX
+  crawlers in Java?</b></dt>
+  <dd>Some examples can be found in our WWW7 paper (see <a
+ href="#papers">   Publications</a>), and JavaDoc API documentation for the
+  class library is  also available (see <a href="#doc">Documentation</a>).<br>
+                     </dd>
+  <dt><b>Can I use WebSPHINX to crawl the entire Web, like search   engines
+  do?</b></dt>
+  <dd>WebSPHINX isn't designed for enormous crawls like that.   Search engines
+  typically use distributed crawlers running on farms of PCs   with a fat
+network  pipe and a distributed filesystem or database for managing   the
+crawl frontier  and storing page data. &nbsp;WebSPHINX is intended more 
+ for personal use,  to crawl perhaps a hundred or a thousand web pages. &nbsp;If
+  you want to  use WebSPHINX for large crawls, you should definitely read
+the   next question  about memory usage.</dd>
+  <dt><b>My WebSPHINX crawler is running out of RAM. &nbsp;How   can I control
+  its memory use?</b></dt>
+  <dd>By default, WebSPHINX retains all the pages and links   that it has
+  crawled until you clear the crawler. &nbsp;This can use up memory   quickly,
+  especially if you're crawling more than a few hundred pages. &nbsp;Here
+  are some tricks for changing the defaults and keeping memory under control.
+    &nbsp;(Note that these tricks only apply when you're writing your own
+crawler    in Java, not when you're using the Crawler Workbench.)<br>
+                                                                        
+                      
+    <ol>
+                               <li>                     Use Page.discardContent() 
+   to throw away (stop referencing) a page's content when you're done with 
+ it,  so that it can be reclaimed by the garbage collector.  This method preserves
+   the page's array of outgoing Links, however, so you'll still have the
+crawl    graph if you need it.</li>
+                               <li>Disconnect the crawl graph entirely by 
+breaking    references between links and pages, so that every Page and Link 
+object can   be reclaimed once the crawler has finished visiting this. To 
+do this, call   page.getOrigin().setPage(null) whenever you're done processing 
+a page.</li>
+                               <li>Another kind of memory bloat is caused 
+by  the  implementation of &nbsp; java.lang.String.substring(). &nbsp;Calling
+  s.substring()  does not make a copy of the characters in the substring.
+&nbsp;Instead,  it  returns a special String that points to the substring
+within s. As a result,  if you use substring() to grab a short part of a
+10KB web page, you're keeping  a reference to the whole 10KB. &nbsp;If you
+need to call substring() on page  content and want to keep the substring
+around but not the original page, you should make a copy of the substring
+using new String (s.toCharArray()).</li>
+                               <li>If all else fails, and you're using the
+ Sun   JDK,  you can use the -mx option (called -Xmx in recent JDKs) to increase
+   the maximum  limit of heap memory.</li>
+                                                                        
+                      
+    </ol>
+                             </dd>
+  <dt><b>The WWW7 paper mentions a "CategoryClassifier",   but I can't find
+  it in the source code. &nbsp;Where can I get it?</b></dt>
+  <dd>The CategoryClassifier was part of an earlier  web-crawling system,
+  SPHINX, developed at Compaq SRC. &nbsp;The original SPHINX code belongs
+to  Compaq SRC and was never released. &nbsp;WebSPHINX is an open-source
+reimplementation  of the SPHINX interface. &nbsp;CategoryClassifier  was
+not part of this reimplementation  because CategoryClassifier depended  on
+some other software that belongs to SRC.</dd>
+  <dt><b>The search engine classifiers don't work.</b></dt>
+  <dd>Most of the search engine classifiers were written  in 1998. &nbsp;Search
+  engines have changed the format of their results many  times since then,
+ so the classifiers are out of date.</dd>
+  <dt><b>My web crawler needs to use a web proxy,   user authentication,
+cookies, a special user-agent, etc. What do I do?</b></dt>
+  <dd>WebSPHINX uses the built-in Java classes   URL and URLConnection to
+  fetch web pages. &nbsp;If you're running the Crawler   Workbench inside
+a  browser, that means your crawler uses the proxy, authentication,   cookies,
+  and user-agent of the browser, so if you can visit the site manually, 
+ then  you can crawl it. &nbsp;If you're running your crawler from the command
+  line, however, you'll have to configure Java to set up your proxy, authentication,
+    user-agents, and so forth.</dd>
+</dl>
+                                                                        
+                                          
+<h2> <a name="src">Source Code</a> </h2>
+                                                                        
+                                             
+<p> The crawler library is open source,  licensed under an <a
+ href="Websphinx-LICENSE">Apache-style license</a>.  The latest release is
+version  0.5, released on July 8, 2002.  See the <a href="ChangeLog">change
+history</a>      to find out what's new. </p>
+                                                                        
+                                          
+<p> Download the source code here: </p>
+                                                                        
+                                          
+<blockquote>   <a href="websphinx.zip">   websphinx.zip</a>   </blockquote>
+                                                                        
+                                                  
+<p>  </p>
+                                                                        
+                                                
+<center>                                                                
+                                                   
+<table border="1" width="90%">
+        <tbody>
+                                               <tr>
+                                                 <td>                   
+                                                                        
+                                                                 
+      <p> WebSPHINX is Copyright &copy; 1998-2002 - Carnegie Mellon University.<br>
+          </p>
+          <br>
+    Redistribution and use in source and binary forms, with or without modification,
+  are permitted provided that the following conditions are met:<br>
+          <br>
+      1. Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.<br>
+          <br>
+      2. Redistributions in binary form must reproduce the above copyright
+ notice,  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.<br>
+      <br>
+    THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY ``AS IS'' AND&nbsp;
+  ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.   IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY NOR ITS EMPLOYEES
+BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+                                                                         
+                                                                         
+           
+      <p>This product includes software developed by the <a
+ href="http://www.apache.org/">Apache Software Foundation</a>  (http://www.apache.org/).
+  &nbsp;In particular, WebSPHINX includes the <a
+ href="http://jakarta.apache.org/regexp/">Apache jakarta-regexp</a> regular
+  expression library, version 1.2.  The (unmodified)  source code for this
+ library is included in the WebSPHINX source code. Redistribution is allowed
+  under the terms of the <a href="Apache-LICENSE">Apache Public License</a>.
+       </p>
+                                                 </td>
+                                               </tr>
+                                                                        
+                                                              
+  </tbody>                                                              
+                                                    
+</table>
+        </center>
+                                                                        
+                                                   
+<h2>   <a name="papers">Documentation</a>    </h2>
+                                                                        
+             
+<p>    <a href="doc/index.html">  Online API   documentation</a> (generated
+by Javadoc)<br>
+                                          </p>
+                                             
+<p> For offline access to the API documentation, download:<br>
+                                          </p>
+                                             
+<blockquote><a href="websphinx-doc.zip">  websphinx-doc.zip</a></blockquote>
+                                                                        
+                                                         
+<h2>   <a name="papers">Publications</a>    </h2>
+                                                                        
+                                                        
+<p> WebSPHINX was inspired by an earlier  system, SPHINX, developed over
+summer 1997 at <a href="http://www.research.digital.com/SRC/home.html"> 
+ Compaq System Research Center</a> (then part of Digital). For more information
+  about SPHINX, see the paper: </p>
+                                                                        
+                                                      
+<blockquote>   Robert C. Miller and  Krishna Bharat.   <a
+ href="http://www.cs.cmu.edu/%7Ercm/papers/www7">SPHINX:  A Framework   for
+  Creating Personal, Site-Specific Web Crawlers</a>. In Proceedings  of 
+ WWW7,  Brisbane Australia, April 1998. </blockquote>
+                                                                        
+                                                              
+<p> WebSPHINX is a ground-up reimplementation  of the SPHINX interface, but
+  some features described in the paper were omitted  in the reimplementation
+  (namely, the category classifier). </p>
+                                                                        
+                                                            
+<h2>   <a name="other">Related Links</a>    </h2>
+                                                                        
+                                                              
+<p> Some other projects are using  WebSPHINX: </p>
+                                                                        
+                                                            
+<ul>
+          <li>     <a
+ href="http://www.cis.upenn.edu/%7Elrossey/websphinx.html">   Personalized
+  search     topic focused web crawler</a> (Lee Rossey, UPenn)          
+                                  </li>
+                                                                        
+                                                            
+</ul>
+                                                                        
+                                                              
+<p> A few <b>Java toolkits</b> worthy  of mention: </p>
+                                                                        
+                                                            
+<ul>
+          <li>     <a href="http://muffin.doit.org">Muffin</a> is an HTTP 
+proxy    with     an elegant extension mechanism for writing your own proxy 
+filters.        Great for anonymizing, cookie-blocking, ad-busting, and  
+  customizing    your view of the Web.  Open source, implemented in     Java.
+  </li>
+                                                                        
+                                                            
+</ul>
+                                                                        
+                                                              
+<p> There are several <b>crawling  toolkits </b>with goals similar to WebSPHINX.
+  </p>
+                                                                        
+                                                            
+<ul>
+          <li>     <a
+ href="http://www.acme.com/resources/classes/Acme/Spider.java">   Acme.Spider</a>
+      is an elegant, single-threaded Java web crawler implemented  as an
+Enumeration.       Open source.   </li>
+                                                 <li>     <a
+ href="http://www.research.digital.com/SRC/WebL/">   WebL</a> is a scripting
+      language for the Web, with primitive functions  for getting web pages
+  and     posting forms, and a built-in structured pattern  language for
+matching   HTML     and XML. Open source, implemented in Java.     </li>
+                                                 <li>     <a
+ href="http://www.agentsoft.com/">   LiveAgent Pro</a> is a Java toolkit
+for     developing web crawlers. Commercial,  closed source.   </li>
+                                                 <li>     <a
+ href="http://www.ibm.com/java/mapuccino/">   Mapuccino</a> (formerly known
+      as WebCutter) is a Java web crawler designed  specifically for web
+visualization.       Closed source. </li>
+                                                 <li>         <a
+ href="http://www.ipgroup.com/macrobot/">   MacroBot</a> is a         web
+  crawling environment using Basic.  Runs only  on Microsoft         Windows.
+   Commercial, closed source. </li>
+                                                                        
+                                                            
+</ul>
+                                                                        
+                                                              
+<p> Several web sites, and even a  few books, describe the <b>crawlers and
+  robots</b> that already roam the Web:                                 
+       </p>
+                                                                        
+                                                            
+<ul>
+          <li>     <a
+ href="http://info.webcrawler.com/mak/projects/robots/active.html">   Web
+      Robots Database</a>   </li>
+                                                 <li>     <a
+ href="http://www.botspot.com/">   BotSpot</a>   </li>
+                                                 <li>     <i>Internet Agents: 
+  Spiders,  Wanderers, Brokers, and Bots </i>by Fah-Chun     Cheong.   </li>
+                                                 <li>     <i>Bots and Other 
+ Internet   Beasties </i> by Joseph Williams </li>
+                                                                        
+                                                            
+</ul>
+                                                                        
+                                                              
+<p> Crawler writers should be aware  of <b>robot ethics</b>: </p>
+                                                                        
+                                                            
+<ul>
+          <li>     <a
+ href="http://info.webcrawler.com/mak/projects/robots/norobots.html">   A
+      Standard for Robot Exclusion</a>&nbsp;   </li>
+                                                 <li>     David Eichmann, 
+                                                <a
+ href="http://www.ncsa.uiuc.edu/SDG/IT94/Proceedings/Agents/eichmann.ethical/eichmann.html"> 
+    Ethical     Web Agents</a><i>.</i>   </li>
+                                                 <li>     <a
+ href="http://xxx.lanl.gov/RobotsBeware.html">   Robots Beware</a>&nbsp;
+  </li>
+                                                                        
+                                                            
+</ul>
+                                                                        
+                                                              
+<p>   </p>
+                                                                        
+                                                            
+<hr>                                                                    
+                                                           
+<address>   Send comments or questions  to <a
+ href="http://www.cs.cmu.edu/%7Ercm/">Rob   Miller</a> (<a
+ href="mailto:rcm@cs.cmu.edu">   rcm@cs.cmu.edu</a>) </address>
+                                                                        
+                                                          <br>
+    <br>
+     
+</body>
+</html>
